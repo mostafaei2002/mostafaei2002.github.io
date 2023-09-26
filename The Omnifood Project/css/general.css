@@ -29,6 +29,7 @@ Shades:
 #cf711f
 Accent:
 Greys:
+#6f6f6f (lightest gray allowed on #fdf2e9)
 #555
 #333
 
@@ -77,8 +78,28 @@ body {
   padding: 1.6rem 3.2rem;
   display: inline-block;
   border-radius: 8px;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
   font-weight: 600;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: #e67e22;
+  border-bottom: 1px solid currentCOlor;
+  text-decoration: none;
+  padding-bottom: 2px;
+  transform: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+  color: #cf711f;
+  border-bottom: 1px solid transparent;
+}
+
+.center-text {
+  text-align: center;
 }
 
 .heading {
@@ -90,13 +111,17 @@ body {
 .secondary-heading {
   font-size: 4.4rem;
   line-height: 1.2;
-  margin-bottom: 9.6rem;
+  margin-bottom: 8rem;
 }
 
 .heading-teritiary {
   font-size: 3.2rem;
   line-height: 1.2;
   margin-bottom: 3.2rem;
+}
+
+strong {
+  font-weight: 500;
 }
 
 .container {
@@ -121,4 +146,12 @@ body {
 }
 .grid--4-cols {
   grid-template-columns: repeat(4, 1fr);
+}
+
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+
+.margin-bottom-md {
+  margin-bottom: 3.6rem !important;
 }
