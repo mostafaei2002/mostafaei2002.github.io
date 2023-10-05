@@ -146,4 +146,28 @@
 
 /* Smaller than 592px */
 @media (max-width: 37em) {
+  /* Mobile Nav */
+  .hero-nav {
+    display: none;
+  }
+  .hero-img {
+    padding: 9.6rem 3.6rem;
+  }
+  .mobile-nav-btn {
+    display: block;
+  }
+  .header-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .top-nav {
+    display: none;
+  }
+  .mobile-logo {
+    display: block;
+  }
+  .header-section {
+    height: 6rem;
+  }
 }

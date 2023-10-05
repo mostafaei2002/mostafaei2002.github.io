@@ -63,6 +63,7 @@ body {
   padding: 1.2rem 3.6rem;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .nav-links {
@@ -578,4 +579,99 @@ body {
   color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
+}
+
+/* ****************************
+*********** Mobile Nav ********
+******************************* */
+
+.mobile-nav-btn {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  z-index: 999;
+}
+
+.open-nav-icon,
+.close-nav-icon {
+  width: 3.6rem;
+  height: 3.6rem;
+}
+
+.close-nav-icon {
+  display: none;
+}
+
+.open-nav .close-nav-icon {
+  display: block;
+}
+
+.open-nav .open-nav-icon {
+  display: none;
+}
+
+.mobile-logo {
+  height: 2.4rem;
+  display: none;
+}
+
+.mobile-nav {
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 10;
+  background-color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6.4rem 9.6rem;
+  transition: all 0.5s ease-out;
+
+  transform: translateX(100%);
+
+  /* Hide */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.open-nav .mobile-nav {
+  opacity: 0.99;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.mobile-nav-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.mobile-nav-items span:first-child {
+  font-size: 2rem;
+}
+
+.mobile-nav .nav-link-login {
+  font-size: 2rem;
+  text-decoration: none;
+  border-bottom: 1px solid #555;
+  display: block;
+  padding: 2px 0;
+  margin-bottom: 1rem;
+}
+
+.mobile-nav-link:link,
+.mobile-nav-link:visited {
+  text-decoration: none;
+  color: #333;
+  font-size: 2.4rem;
 }
