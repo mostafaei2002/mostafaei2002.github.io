@@ -133,6 +133,11 @@ a:visited {
   color: #1e3a8a;
 }
 
+.tag--js {
+  background-color: #fefce8;
+  color: #713f12;
+}
+
 .tag--python {
   background-color: #f0fdf4;
   color: #14532d;
