@@ -91,8 +91,8 @@ a:visited {
   display: flex;
   /* border-bottom: 1px solid #e5e7eb; */
   background-color: #f9fafb;
-  border-top-right-radius: 12px;
-  border-top-left-radius: 12px;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
   overflow: hidden;
 }
 
