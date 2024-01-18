@@ -25,3 +25,33 @@ const { title } = Astro.props;
         <Footer />
     </body>
 </html>
+
+<style is:global>
+    .display-large {
+        @apply text-6xl leading-[64px];
+    }
+
+    .display-medium {
+        @apply text-5xl leading-[52px];
+    }
+
+    .heading-primary {
+        @apply text-4xl leading-10;
+    }
+
+    .heading-secondary {
+        @apply text-3xl leading-9;
+    }
+
+    .heading-tertiary {
+        @apply text-2xl leading-8;
+    }
+
+    .text-lead {
+        @apply text-xl leading-6 tracking-[0.5px];
+    }
+
+    .text-body {
+        @apply text-base leading-5 tracking-[0.25px];
+    }
+</style>

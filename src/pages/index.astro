@@ -1,7 +1,21 @@
 ---
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import ProjectsGrid from "../components/ProjectsGrid.astro";
+
+const chosenProjectsSlug = ["forkify", "natours", "nexter"];
+
+const allProjects = await getCollection("projects");
+const chosenProjects = allProjects.filter((project) =>
+    chosenProjectsSlug.includes(project.slug)
+);
 ---
 
 <Layout title="Home">
+    <Hero />
+    <ProjectsGrid projects={chosenProjects} />
     <!-- Placeholder -->
 </Layout>
