@@ -5,41 +5,54 @@ console.log(project);
 
 <div class="card">
     <div class="card__image-container">
-        <img src={project.image} alt="" class="card__image" />
+        <img
+            src={project.data.image}
+            alt={project.data.title}
+            class="card__image"
+        />
     </div>
     <div class="card__text-container">
-        <h5 class="card__title">{project.title}</h5>
-        <p class="card__text">{project.description}</p>
+        <h5 class="card__title">{project.data.title}</h5>
+        <p class="card__text">{project.data.description}</p>
         <div class="card__tags"></div>
-        <div class="card_btns"></div>
+        <div class="card_btns">
+            <a class="btn--text" href={"/projects/" + project.slug}
+                >See Project</a
+            >
+        </div>
     </div>
 </div>
 
 <style>
     .card {
-        @apply rounded-xl overflow-hidden shadow;
+        @apply rounded-lg shadow flex flex-col;
     }
 
     .card__image-container {
+        @apply rounded-t-lg overflow-hidden;
     }
 
     .card__text-container {
-        @apply px-4 py-2;
+        @apply px-4 flex-1 flex flex-col;
     }
 
     .card__title {
-        @apply text-xl font-bold capitalize;
+        @apply text-xl font-bold capitalize my-2;
     }
 
     .card__text {
-        @apply text-base capitalize;
+        @apply text-base;
     }
 
     .card__tags {
-        @apply flex gap-2;
+        @apply flex gap-2 mt-auto;
     }
 
     .card__btns {
-        @apply flex gap-2;
+        @apply flex gap-2 justify-items-start;
+    }
+
+    .btn--text {
+        @apply px-6 py-2 block;
     }
 </style>
