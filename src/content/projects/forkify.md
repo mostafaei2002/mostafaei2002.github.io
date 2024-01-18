@@ -1,7 +1,7 @@
 ---
 title: Forkify
 date: 2023-10-23
-image: strava-page.jpg
+image: forkify-project.jpg
 repository: https://github.com/mostafaei2002/forkify
 demo: https://forkify-sina.surge.sh/
 tags: [html, css, javascript]
