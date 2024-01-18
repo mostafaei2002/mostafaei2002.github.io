@@ -3,6 +3,43 @@ const { project } = Astro.props;
 console.log(project);
 ---
 
-<div>
-    <h5>{project.data.title}</h5>
+<div class="card">
+    <div class="card__image-container">
+        <img src={project.image} alt="" class="card__image" />
+    </div>
+    <div class="card__text-container">
+        <h5 class="card__title">{project.title}</h5>
+        <p class="card__text">{project.description}</p>
+        <div class="card__tags"></div>
+        <div class="card_btns"></div>
+    </div>
 </div>
+
+<style>
+    .card {
+        @apply rounded-xl overflow-hidden shadow;
+    }
+
+    .card__image-container {
+    }
+
+    .card__text-container {
+        @apply px-4 py-2;
+    }
+
+    .card__title {
+        @apply text-xl font-bold capitalize;
+    }
+
+    .card__text {
+        @apply text-base capitalize;
+    }
+
+    .card__tags {
+        @apply flex gap-2;
+    }
+
+    .card__btns {
+        @apply flex gap-2;
+    }
+</style>

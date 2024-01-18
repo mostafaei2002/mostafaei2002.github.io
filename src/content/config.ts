@@ -7,7 +7,7 @@ const projectsCollection = defineCollection({
         date: z.date(),
         image: z.string(),
         repository: z.string(),
-        demo: z.string(),
+        demo: z.string().optional(),
         tags: z.array(z.string()),
         description: z.string(),
         publish: z.boolean(),
