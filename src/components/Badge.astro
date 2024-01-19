@@ -1,8 +1,6 @@
 ---
-const { tag } = Astro.props;
-
 // source:  https://github.com/alexandresanlim/Badges4-README.md-Profile?tab=readme-ov-file
-const badges = {
+const badgesData = {
     // Machine learning
     jupyter: {
         image: "https://img.shields.io/badge/Jupyter-F37626.svg?&style=for-the-badge&logo=Jupyter&logoColor=white",
@@ -143,8 +141,10 @@ const badges = {
         image: "https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white",
     },
 };
+
+const { tag } = Astro.props;
 ---
 
 <div>
-    <img src="" alt="" />
+    <img src={badgesData[tag].image} alt={"badge" + tag} />
 </div>

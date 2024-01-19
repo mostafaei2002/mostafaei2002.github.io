@@ -1,0 +1,23 @@
+---
+import Badge from "./Badge.astro";
+const skills: [string] = ["html"];
+const languages: [string] = ["python", "javascript", "c", "cpp", "rust", "go"];
+---
+
+<section id="skills" class="py-24">
+    <div class="container mx-auto px-2 md:px-4 lg:px-8">
+        <h2 class="heading-secondary mb-2">Skills & Interests</h2>
+        <p class="text-body text-gray-600 mb-6 max-w-lg">
+            These of the things I know or want to learn. My projects are a
+            better indication of what I know.
+        </p>
+
+        <div class="flex gap-4 text-body items-center">
+            Languages:
+
+            <div class="flex gap-2">
+                {languages.map((language) => <Badge tag={language} />)}
+            </div>
+        </div>
+    </div>
+</section>

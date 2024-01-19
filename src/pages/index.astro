@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import Skills from "../components/Skills.astro";
 import ProjectsGrid from "../components/ProjectsGrid.astro";
 
 const chosenProjectsSlug = ["forkify", "natours", "nexter"];
@@ -15,6 +16,7 @@ const chosenProjects = allProjects.filter((project) =>
 
 <Layout title="Home">
     <Hero />
+    <Skills />
     <ProjectsGrid projects={chosenProjects} />
     <!-- Placeholder -->
 </Layout>
