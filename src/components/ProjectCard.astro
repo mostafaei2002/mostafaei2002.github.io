@@ -20,8 +20,19 @@ const { project } = Astro.props;
             {project.data.tags.map((tag) => <Badge name={tag} />)}
         </div>
         <div class="card__btns">
-            <ButtonOutline title="See Project" href="#" />
-            <ButtonOutline title="Visit Demo" href="#" />
+            <ButtonOutline
+                title="Visit Repository"
+                href={project.data.repository}
+            />
+
+            {
+                project.data.demo && (
+                    <ButtonOutline
+                        title="Visit Demo"
+                        href={project.data.demo}
+                    />
+                )
+            }
         </div>
     </div>
 </div>
