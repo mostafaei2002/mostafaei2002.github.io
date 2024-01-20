@@ -1,4 +1,7 @@
 ---
+import ButtonOutline from "./ButtonOutline.astro";
+import Badge from "./Badge.astro";
+
 const { project } = Astro.props;
 ---
 
@@ -13,11 +16,12 @@ const { project } = Astro.props;
     <div class="card__text-container">
         <h5 class="card__title">{project.data.title}</h5>
         <p class="card__text">{project.data.description}</p>
-        <div class="card__tags"></div>
-        <div class="card_btns">
-            <a class="btn--text" href={"/projects/" + project.slug}
-                >See Project</a
-            >
+        <div class="card__tags mb-4">
+            {project.data.tags.map((tag) => <Badge name={tag} />)}
+        </div>
+        <div class="card__btns">
+            <ButtonOutline title="See Project" href="#" />
+            <ButtonOutline title="Visit Demo" href="#" />
         </div>
     </div>
 </div>
@@ -32,7 +36,7 @@ const { project } = Astro.props;
     }
 
     .card__text-container {
-        @apply px-4 flex-1 flex flex-col;
+        @apply px-4 pb-4 flex-1 flex flex-col;
     }
 
     .card__title {
@@ -40,15 +44,15 @@ const { project } = Astro.props;
     }
 
     .card__text {
-        @apply text-base;
+        @apply text-base mb-4;
     }
 
     .card__tags {
-        @apply flex gap-2 mt-auto;
+        @apply flex gap-2 mt-auto mb-4;
     }
 
     .card__btns {
-        @apply flex gap-2 justify-items-start;
+        @apply flex gap-2;
     }
 
     .btn--text {

@@ -1,6 +1,4 @@
 ---
-import { imageConfig } from "astro:assets";
-
 // source:  https://github.com/alexandresanlim/Badges4-README.md-Profile?tab=readme-ov-file
 const badgesData = {
     // Machine learning
@@ -153,12 +151,12 @@ const badgesData = {
     },
 };
 
-const { tag } = Astro.props;
-if (!badgesData[tag]) {
-    console.log(`${tag} not in badges`);
+const { name } = Astro.props;
+if (!badgesData[name]) {
+    console.error(`${tag} not in badges`);
 }
 ---
 
 <div>
-    <img src={badgesData[tag].image} alt={"badge" + tag} />
+    <img src={badgesData[name].image} alt={"badge" + name} />
 </div>
