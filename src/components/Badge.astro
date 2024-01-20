@@ -1,4 +1,6 @@
 ---
+import { imageConfig } from "astro:assets";
+
 // source:  https://github.com/alexandresanlim/Badges4-README.md-Profile?tab=readme-ov-file
 const badgesData = {
     // Machine learning
@@ -40,6 +42,9 @@ const badgesData = {
     css: {
         image: "https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white",
     },
+    sass: {
+        image: "https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white",
+    },
     astro: {
         image: "https://img.shields.io/badge/Astro-0C1222?style=for-the-badge&logo=astro&logoColor=FDFDFE",
     },
@@ -66,6 +71,12 @@ const badgesData = {
     postgresql: {
         image: "https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white",
     },
+    mongodb: {
+        image: "https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white",
+    },
+    mysql: {
+        image: "https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white",
+    },
     redis: {
         image: "https://img.shields.io/badge/redis-%23DD0031.svg?&style=for-the-badge&logo=redis&logoColor=white",
     },
@@ -75,7 +86,7 @@ const badgesData = {
     djangoRest: {
         image: "https://img.shields.io/badge/django%20rest-ff1709?style=for-the-badge&logo=django&logoColor=white",
     },
-    fastAPI: {
+    fastapi: {
         image: "https://img.shields.io/badge/fastapi-109989?style=for-the-badge&logo=FASTAPI&logoColor=white",
     },
     nextjs: {
@@ -143,6 +154,9 @@ const badgesData = {
 };
 
 const { tag } = Astro.props;
+if (!badgesData[tag]) {
+    console.log(`${tag} not in badges`);
+}
 ---
 
 <div>
