@@ -149,14 +149,39 @@ const badgesData = {
     arch: {
         image: "https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white",
     },
+
+    //Socials & Contact
+    github: {
+        image: "https://img.shields.io/badge/GitHub-ffffff?style=for-the-badge&logo=github&logoColor=black",
+    },
+    kagge: {
+        image: "https://img.shields.io/badge/Kaggle-20BEFF?style=for-the-badge&logo=Kaggle&logoColor=white",
+    },
+    leetcode: {
+        image: "https://img.shields.io/badge/-LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black",
+    },
+    linkedin: {
+        image: "https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white",
+    },
+    strava: {
+        image: "https://img.shields.io/badge/Strava-FC4C02?style=for-the-badge&logo=strava&logoColor=white",
+    },
+    telegram: {
+        image: "https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white",
+    },
+    gmail: {
+        image: "https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white",
+    },
 };
 
-const { name } = Astro.props;
+const { name, href = null } = Astro.props;
 if (!badgesData[name]) {
-    console.error(`${tag} not in badges`);
+    console.error(`${name} not in badges`);
 }
 ---
 
 <div>
-    <img src={badgesData[name].image} alt={"badge" + name} />
+    <a href={href ? href : ""}
+        ><img src={badgesData[name].image} alt={"badge" + name} /></a
+    >
 </div>
