@@ -21,16 +21,13 @@ const { project } = Astro.props;
         </div>
         <div class="card__btns">
             <ButtonOutline
-                title="Visit Repository"
+                text="Visit Repository"
                 href={project.data.repository}
             />
 
             {
                 project.data.demo && (
-                    <ButtonOutline
-                        title="Visit Demo"
-                        href={project.data.demo}
-                    />
+                    <ButtonOutline text="Visit Demo" href={project.data.demo} />
                 )
             }
         </div>
@@ -39,11 +36,11 @@ const { project } = Astro.props;
 
 <style>
     .card {
-        @apply rounded-lg shadow flex flex-col;
+        @apply rounded-sm overflow-hidden shadow flex flex-col;
     }
 
     .card__image-container {
-        @apply rounded-t-lg overflow-hidden border-b;
+        @apply border-b;
     }
 
     .card__text-container {
