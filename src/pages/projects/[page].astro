@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "../../layouts/Layout.astro";
+import ProjectsGrid from "../../components/ProjectsGrid.astro";
+import Pagination from "../../components/Pagination.astro";
+
+export async function getStaticPaths({ paginate }) {
+    const allProjects = (await getCollection("projects")).filter(
+        (project) => project.data.publish
+    );
+    // Generate pages from our array of astronauts, with 2 to a page
+    return paginate(allProjects, { pageSize: 2 });
+}
+// All paginated data is passed on the "page" prop
+const { page } = Astro.props;
+console.log(page);
+---
+
+<Layout title="Projects">
+    <ProjectsGrid projects={page.data} />
+    {page.lastPage > 1 && <Pagination page={page} />}
+    <!-- Placeholder -->
+</Layout>
