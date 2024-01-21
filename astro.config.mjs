@@ -8,4 +8,5 @@ export default defineConfig({
     redirects: {
         "/projects": "/projects/1",
     },
+    site: "https://mostafaei2002.github.io",
 });
