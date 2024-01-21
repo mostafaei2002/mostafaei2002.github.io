@@ -1,15 +1,28 @@
 ---
 import ProjectCard from "./ProjectCard.astro";
+import ButtonOutline from "./ButtonOutline.astro";
 
 const { limit, projects } = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 
 <section id="projects" class="py-24">
     <div class="container mx-auto px-2 md:px-4 lg:px-8">
-        <h2 class="heading-secondary mb-2">Projects</h2>
-        <p class="text-body text-gray-600 mb-6">
-            These are some of the projects I am proud of.
-        </p>
+        <div class="flex justify-between items-start">
+            <div>
+                <h2 class="heading-secondary mb-2">Projects</h2>
+                <p class="text-body text-gray-600 mb-6">
+                    These are some of the projects I am proud of.
+                </p>
+            </div>
+            {
+                currentPath.split("/")[1] != "projects" && (
+                    <div>
+                        <ButtonOutline text="All Projects" href="/projects" />
+                    </div>
+                )
+            }
+        </div>
 
         <div class="grid md:grid-cols-3 gap-2">
             {projects.map((project: any) => <ProjectCard project={project} />)}

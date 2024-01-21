@@ -7,5 +7,5 @@ tags: [tensorflow]
 description: >
     Machine learning project with convolutional neural
     networks to detect clothe types from 256x256 images.
-publish: true
+publish: false
 ---

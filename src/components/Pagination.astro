@@ -1,0 +1,27 @@
+---
+import ButtonOutline from "./ButtonOutline.astro";
+const { page } = Astro.props;
+---
+
+<div class="flex gap-2 pb-24 justify-center">
+    {page.url.prev && <ButtonOutline href={page.url.prev} text="&laquo;" />}
+
+    {
+        page.url.prev && (
+            <ButtonOutline href={page.url.prev} text={page.currentPage - 1} />
+        )
+    }
+
+    <ButtonOutline
+        href={"/projects/" + page.currentPage}
+        text={page.currentPage}
+    />
+
+    {
+        page.url.next && (
+            <ButtonOutline href={page.url.next} text={page.currentPage + 1} />
+        )
+    }
+
+    {page.url.next && <ButtonOutline href={page.url.next} text="&raquo;" />}
+</div>

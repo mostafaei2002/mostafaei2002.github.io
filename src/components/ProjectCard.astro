@@ -8,7 +8,7 @@ const { project } = Astro.props;
 <div class="card">
     <div class="card__image-container">
         <img
-            src={project.data.image}
+            src={"/" + project.data.image}
             alt={project.data.title}
             class="card__image"
         />
@@ -41,6 +41,10 @@ const { project } = Astro.props;
 
     .card__image-container {
         @apply border-b;
+    }
+
+    .card__image {
+        @apply h-[250px] bg-cover mx-auto;
     }
 
     .card__text-container {

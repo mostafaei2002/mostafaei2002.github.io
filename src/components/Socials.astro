@@ -1,0 +1,12 @@
+---
+import Badge from "./Badge.astro";
+
+const socials = [
+    { name: "github", href: "https://github.com/mostafaei2002" },
+    { name: "gmail", href: "mailto:sinamostafaei2002@gmail.com" },
+];
+---
+
+<div class="flex flex-wrap gap-2">
+    {socials.map((social) => <Badge name={social.name} href={social.href} />)}
+</div>
