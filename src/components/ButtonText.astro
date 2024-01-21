@@ -1,0 +1,11 @@
+---
+const { href } = Astro.props;
+---
+
+<a href={href ? href : ""} class="btn--text"><slot /></a>
+
+<style>
+    .btn--text {
+        @apply px-6 py-2 block;
+    }
+</style>

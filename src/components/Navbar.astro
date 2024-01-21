@@ -1,3 +1,7 @@
+---
+import ButtonText from "./ButtonText.astro";
+---
+
 <header class="shadow">
     <div class="container mx-auto flex justify-between items-center pt-3 pb-4">
         <div>
@@ -5,10 +9,9 @@
         </div>
         <nav>
             <ul class="flex gap-2">
-                <li><a href="#Home" class="btn--text">Home</a></li>
-                <li><a href="#Projects" class="btn--text">Projects</a></li>
-                <li><a href="#Skills" class="btn--text">Skills</a></li>
-                <li><a href="#About" class="btn--text">About Me</a></li>
+                <li><ButtonText href="/#">Home</ButtonText></li>
+                <li><ButtonText href="#projects">Projects</ButtonText></li>
+                <li><ButtonText href="#skills">Skills</ButtonText></li>
             </ul>
         </nav>
     </div>
