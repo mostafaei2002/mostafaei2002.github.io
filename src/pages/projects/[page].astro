@@ -10,7 +10,7 @@ export async function getStaticPaths({ paginate }) {
         (project) => project.data.publish
     );
     // Generate pages from our array of astronauts, with 2 to a page
-    return paginate(allProjects, { pageSize: 2 });
+    return paginate(allProjects, { pageSize: 12 });
 }
 // All paginated data is passed on the "page" prop
 const { page } = Astro.props;

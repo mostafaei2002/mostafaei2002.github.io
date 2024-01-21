@@ -23,11 +23,16 @@ const { project } = Astro.props;
             <ButtonOutline
                 text="Visit Repository"
                 href={project.data.repository}
+                stretch="true"
             />
 
             {
                 project.data.demo && (
-                    <ButtonOutline text="Visit Demo" href={project.data.demo} />
+                    <ButtonOutline
+                        text="Visit Demo"
+                        href={project.data.demo}
+                        stretch="true"
+                    />
                 )
             }
         </div>
@@ -65,9 +70,5 @@ const { project } = Astro.props;
 
     .card__btns {
         @apply flex gap-2;
-    }
-
-    .btn--text {
-        @apply px-6 py-2 block;
     }
 </style>
