@@ -1,8 +1,12 @@
 ---
 import Badge from "./Badge.astro";
 
+const { theme = "dark" } = Astro.props;
 const socials = [
-    { name: "github", href: "https://github.com/mostafaei2002" },
+    {
+        name: theme == "dark" ? "githubDark" : "githubLight",
+        href: "https://github.com/mostafaei2002",
+    },
     { name: "gmail", href: "mailto:sinamostafaei2002@gmail.com" },
 ];
 ---
