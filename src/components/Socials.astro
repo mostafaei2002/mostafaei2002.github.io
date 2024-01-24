@@ -12,5 +12,11 @@ const socials = [
 ---
 
 <div class="flex flex-wrap gap-2">
-    {socials.map((social) => <Badge name={social.name} href={social.href} />)}
+    {
+        socials.map((social) => (
+            <a href={social.href}>
+                <Badge name={social.name} href={social.href} />
+            </a>
+        ))
+    }
 </div>

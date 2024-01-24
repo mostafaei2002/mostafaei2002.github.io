@@ -180,14 +180,12 @@ const badgesData = {
     },
 };
 
-const { name, href = null } = Astro.props;
+const { name } = Astro.props;
 if (!badgesData[name]) {
     console.error(`${name} not in badges`);
 }
 ---
 
 <div>
-    <a {href && `href=${href}`}
-        ><img src={badgesData[name].image} alt={`badge ${name}`} /></a
-    >
+    <img src={badgesData[name].image} alt={`badge ${name}`} />
 </div>
