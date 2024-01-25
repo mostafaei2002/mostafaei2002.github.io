@@ -18,7 +18,17 @@ console.log(page);
 ---
 
 <Layout title="Projects">
-    <ProjectsGrid projects={page.data} />
+    <section class="py-24">
+        <div class="container mx-auto px-2 md:px-4 lg:px-8">
+            <div class="mb-8">
+                <h1 class="heading-primary">Projects</h1>
+                <p class="text-gray-600">
+                    Here you can see most of my projects.
+                </p>
+            </div>
+            <ProjectsGrid projects={page.data} />
+        </div>
+    </section>
     {page.lastPage > 1 && <Pagination page={page} />}
     <!-- Placeholder -->
 </Layout>

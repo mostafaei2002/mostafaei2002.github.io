@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 
 import Layout from "../layouts/Layout.astro";
 import AboutMe from "../components/AboutMe.astro";
-import ProjectsGrid from "../components/ProjectsGrid.astro";
+import ProjectsSection from "../components/ProjectsSection.astro";
 
 const chosenProjectsSlug = ["forkify", "natours", "nexter"];
 
@@ -15,6 +15,6 @@ const chosenProjects = allProjects.filter((project) =>
 
 <Layout title="Home">
     <AboutMe />
-    <ProjectsGrid projects={chosenProjects} />
+    <ProjectsSection projects={chosenProjects} />
     <!-- Placeholder -->
 </Layout>
