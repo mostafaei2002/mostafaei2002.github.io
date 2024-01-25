@@ -1,9 +1,12 @@
 ---
-const { text, href, stretch = false } = Astro.props;
+const { text, href, stretch = false, state = "normal" } = Astro.props;
 ---
 
-<a href={href} class={stretch ? "btn--outline flex-1" : "btn--outline"}
-    >{text}</a
+<a
+    href={href}
+    class={(stretch ? "btn--outline flex-1" : "btn--outline") +
+        " " +
+        `btn--${state}`}>{text}</a
 >
 
 <style>
@@ -12,5 +15,13 @@ const { text, href, stretch = false } = Astro.props;
     }
     .btn--flex {
         @apply flex-1;
+    }
+    .btn--normal {
+    }
+    .btn--active {
+        @apply bg-sky-600 text-white;
+    }
+    .btn--disabled {
+        @apply bg-white text-gray-800 border-gray-600 hover:bg-gray-200 hover:text-gray-800;
     }
 </style>
