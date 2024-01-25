@@ -4,7 +4,7 @@ const { page } = Astro.props;
 ---
 
 <div class="flex gap-2 pb-24 justify-center">
-    {page.url.prev && <ButtonOutline href={page.url.prev} text="&laquo;" />}
+    {<ButtonOutline href={page.url.prev} text="&laquo;" state={!page.url.prev && "disabled"} />}
 
     {
         page.url.prev && (
@@ -15,6 +15,7 @@ const { page } = Astro.props;
     <ButtonOutline
         href={"/projects/" + page.currentPage}
         text={page.currentPage}
+        state="active"
     />
 
     {
@@ -23,5 +24,5 @@ const { page } = Astro.props;
         )
     }
 
-    {page.url.next && <ButtonOutline href={page.url.next} text="&raquo;" />}
+    {<ButtonOutline href={page.url.next} text="&raquo;" state={!page.url.next && "disabled"} />}
 </div>
