@@ -15,10 +15,17 @@ const currentPath = Astro.url.pathname;
                     These are some of the projects I am proud of.
                 </p>
             </div>
-            <div>
+            <div class="hidden md:block">
                 <ButtonOutline text="All Projects" href="/projects" />
             </div>
         </div>
         <ProjectsGrid projects={projects} />
+        <div class="flex px-2 mt-8 md:hidden">
+            <ButtonOutline
+                text="All Projects"
+                href="/projects"
+                stretch={true}
+            />
+        </div>
     </div>
 </section>

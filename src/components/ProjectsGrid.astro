@@ -6,6 +6,6 @@ const { limit, projects } = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
 
-<div class="grid md:grid-cols-3 gap-2">
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
     {projects.map((project: any) => <ProjectCard project={project} />)}
 </div>
