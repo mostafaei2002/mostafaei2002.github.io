@@ -1,14 +1,18 @@
 ---
+import { Image } from "astro:assets";
 import ButtonOutline from "./ButtonOutline.astro";
 import Badge from "./Badge.astro";
 
 const { project } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/images/*.{jpeg,jpg,png,gif}"
+);
 ---
 
 <div class="card">
     <div class="card__image-container">
-        <img
-            src={"/" + project.data.image}
+        <Image
+            src={images[`/src/images/${project.data.image}`]()}
             alt={project.data.title}
             class="card__image"
         />
@@ -49,7 +53,8 @@ const { project } = Astro.props;
     }
 
     .card__image {
-        @apply max-h-[250px] bg-cover mx-auto;
+        @apply max-h-[225px] bg-cover mx-auto;
+        object-fit: contain;
     }
 
     .card__text-container {
