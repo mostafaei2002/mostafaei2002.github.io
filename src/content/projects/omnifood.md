@@ -8,5 +8,6 @@ tags: [html, css]
 description: >
     A follow through project from a udemy course by jonas
     schmedtmann.
+score: 5
 publish: true
 ---

@@ -8,5 +8,6 @@ description: >
     pomodoro app built with python using customtkinter
     library. The settings can be changed and it also has some
     graphs.
+score: 4
 publish: true
 ---

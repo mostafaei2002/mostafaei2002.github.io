@@ -7,5 +7,6 @@ demo: https://mostafaei2002.github.io/trillo/
 tags: [html, css]
 description: >
     A fully responsive static website with modern design built with HTML 5 & CSS 5 with an extensive usage of CSS flexboxes.Follow through project.
+score: 4
 publish: true
 ---

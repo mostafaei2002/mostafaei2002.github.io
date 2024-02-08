@@ -7,5 +7,6 @@ tags: [tensorflow]
 description: >
     Machine Learning project using convolutional neural
     networks to predict digits 0 to 9 from 256x256 images.
+score: 2
 publish: false
 ---

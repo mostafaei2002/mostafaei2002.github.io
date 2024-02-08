@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import AboutMe from "../components/AboutMe.astro";
 import ProjectsSection from "../components/ProjectsSection.astro";
 
-const chosenProjectsSlug = ["forkify", "natours", "nexter"];
+const chosenProjectsSlug = ["django-ecommerce", "forkify", "natours"];
 
 const allProjects = await getCollection("projects");
 const chosenProjects = allProjects.filter((project) =>

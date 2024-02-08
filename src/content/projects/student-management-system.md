@@ -7,5 +7,6 @@ tags: [python]
 description: >
     Student management app built with customtkinter to add, edit, delete
     students from a database.
+score: 2
 publish: false
 ---

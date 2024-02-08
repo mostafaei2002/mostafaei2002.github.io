@@ -8,5 +8,6 @@ tags: [html, css]
 description: >
     A clone of Strava's old landing page. Built with HTML, CSS
     and a little bit of JavaScript.
+score: 3
 publish: true
 ---
