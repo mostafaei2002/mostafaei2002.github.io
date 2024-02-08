@@ -3,7 +3,7 @@ import Badge from "./Badge.astro";
 import Socials from "./Socials.astro";
 
 const mainLanguages = ["python", "javascript"];
-const secondaryLanguages = ["php", "rust", "c", "cpp", "go"];
+const secondaryLanguages = ["rust", "go", "c"];
 ---
 
 <section id="hero" class="py-44">
@@ -23,18 +23,16 @@ const secondaryLanguages = ["php", "rust", "c", "cpp", "go"];
             </div>
             <div class="flex flex-col justify-end gap-2">
                 <div class="flex gap-2 items-center">
-                    <h4 class="text-base">Main Languges:</h4>
+                    <h4 class="text-base">Primary Languges:</h4>
                     {mainLanguages.map((lang) => <Badge name={lang} />)}
                 </div>
 
                 <div class="flex gap-2 items-center">
-                    <h4 class="text-base">Secondary Languages:</h4>
+                    <h4 class="text-base">Interested In:</h4>
                     {secondaryLanguages.map((lang) => <Badge name={lang} />)}
                 </div>
 
-                <div>
-                    Interested in : Fullstack Development & Machine Learning
-                </div>
+                <div>Fields : Fullstack Development & Machine Learning</div>
             </div>
         </div>
     </div>

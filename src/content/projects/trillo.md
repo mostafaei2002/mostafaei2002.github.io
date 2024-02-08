@@ -1,5 +1,5 @@
 ---
-title: Forkify
+title: Trillo
 date: 2023-11-03
 image: trillo.jpg
 repository: https://github.com/mostafaei2002/trillo
