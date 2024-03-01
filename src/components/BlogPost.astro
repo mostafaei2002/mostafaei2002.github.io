@@ -1,13 +1,17 @@
 ---
 // console.log(Astro.props);
-const {
-  post: { data },
-} = Astro.props;
+const { post } = Astro.props;
+console.log(post);
+const { data } = post;
+
 const { title, created_at, summary } = data;
+
+const link = `${post.collection}/${post.slug}`;
 ---
 
 <div class="flex flex-col">
   <h2 class="text-3xl capitalize">{title}</h2>
   <span>created at {created_at}</span>
   <p>{summary}</p>
+  <a href={link}>Read more</a>
 </div>
