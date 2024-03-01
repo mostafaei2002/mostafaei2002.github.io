@@ -1,0 +1,13 @@
+---
+// console.log(Astro.props);
+const {
+  post: { data },
+} = Astro.props;
+const { title, created_at, summary } = data;
+---
+
+<div class="flex flex-col">
+  <h2 class="text-3xl capitalize">{title}</h2>
+  <span>created at {created_at}</span>
+  <p>{summary}</p>
+</div>
