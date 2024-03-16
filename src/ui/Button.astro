@@ -1,0 +1,18 @@
+---
+const { text, href, className } = Astro.props;
+---
+
+<a href={href} class={`btn--outline ${className}`}>
+  <slot />
+</a>
+
+<style>
+  .btn--outline {
+    @apply py-2 px-6 text-center border border-sky-600 transition duration-200 hover:bg-sky-600 hover:text-white;
+    white-space: nowrap;
+  }
+
+  .btn--disabled {
+    @apply bg-white text-gray-800 border-gray-600 hover:bg-gray-200 hover:text-gray-800;
+  }
+</style>

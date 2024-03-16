@@ -1,42 +1,38 @@
 ---
-import { Image } from "astro:assets";
-import ButtonOutline from "../../ui/ButtonOutline.astro";
-import Badge from "../../ui/Badge.astro";
+import { Image } from 'astro:assets';
+import Button from '../../ui/Button.astro';
+import Badge from '../../ui/Badge.astro';
 
 const { project } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/images/*.{jpeg,jpg,png,gif}"
+  '/src/images/*.{jpeg,jpg,png,gif}'
 );
 ---
 
-<div class="card">
-  <div class="card__image-container">
+<div class='card'>
+  <div class='card__image-container'>
     <Image
       src={images[`/src/images/${project.data.image}`]()}
       alt={project.data.title}
-      class="card__image"
+      class='card__image'
     />
   </div>
-  <div class="card__text-container">
-    <h5 class="card__title">{project.data.title}</h5>
-    <p class="card__text">{project.data.description}</p>
-    <div class="card__tags mb-4">
+  <div class='card__text-container'>
+    <h5 class='card__title'>{project.data.title}</h5>
+    <p class='card__text'>{project.data.description}</p>
+    <div class='card__tags mb-4'>
       {project.data.tags.map((tag) => <Badge name={tag} />)}
     </div>
-    <div class="card__btns">
-      <ButtonOutline
-        text="Visit Repository"
-        href={project.data.repository}
-        stretch="true"
-      />
+    <div class='card__btns'>
+      <Button href={project.data.repository} className='flex-1'>
+        Visit Repository
+      </Button>
 
       {
         project.data.demo && (
-          <ButtonOutline
-            text="Visit Demo"
-            href={project.data.demo}
-            stretch="true"
-          />
+          <Button href={project.data.demo} className='flex-1'>
+            Visit Demo
+          </Button>
         )
       }
     </div>

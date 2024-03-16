@@ -1,16 +1,16 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content';
 
-import Layout from "../../layouts/Layout.astro";
-import BlogPost from "../../features/blog/BlogPost.astro";
+import Layout from '../../layouts/Layout.astro';
+import BlogPost from '../../features/blog/BlogPost.astro';
 
-const blogPosts = (await getCollection("blog")).filter(
+const blogPosts = (await getCollection('blog')).filter(
   (post) => post.data.publish
 );
 ---
 
-<Layout title="Welcome to my blog">
-  <div class="container mx-auto px-2 md:px-4 lg:px-8">
+<Layout title='Welcome to my blog'>
+  <section class='py-12'>
     {blogPosts.map((post) => <BlogPost post={post} />)}
-  </div>
+  </section>
 </Layout>

@@ -1,28 +1,38 @@
 ---
-import ButtonOutline from "./ButtonOutline.astro";
+import Button from './Button.astro';
 const { page } = Astro.props;
 ---
 
-<div class="flex gap-2 pb-24 justify-center">
-    {<ButtonOutline href={page.url.prev} text="&laquo;" state={!page.url.prev && "disabled"} />}
+<div class='flex gap-2 pb-24 justify-center'>
+  {
+    (
+      <Button href={page.url.prev} state={!page.url.prev && 'disabled'}>
+        &laquo;
+      </Button>
+    )
+  }
 
-    {
-        page.url.prev && (
-            <ButtonOutline href={page.url.prev} text={page.currentPage - 1} />
-        )
-    }
+  {
+    page.url.prev && (
+      <Button href={page.url.prev}>{page.currentPage - 1}</Button>
+    )
+  }
 
-    <ButtonOutline
-        href={"/projects/" + page.currentPage}
-        text={page.currentPage}
-        state="active"
-    />
+  <Button href={'/projects/' + page.currentPage} state='active'>
+    {page.currentPage}
+  </Button>
 
-    {
-        page.url.next && (
-            <ButtonOutline href={page.url.next} text={page.currentPage + 1} />
-        )
-    }
+  {
+    page.url.next && (
+      <Button href={page.url.next}>{page.currentPage + 1}</Button>
+    )
+  }
 
-    {<ButtonOutline href={page.url.next} text="&raquo;" state={!page.url.next && "disabled"} />}
+  {
+    (
+      <Button href={page.url.next} state={!page.url.next && 'disabled'}>
+        &raquo;
+      </Button>
+    )
+  }
 </div>
