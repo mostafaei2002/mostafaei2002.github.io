@@ -6,7 +6,7 @@ import ProjectCard from '../../features/projects/ProjectCard.astro';
 
 const projects = (await getCollection('projects'))
   .sort((a, b) => b.data.score - a.data.score)
-  .slice(0, 6);
+  .slice(0, 3);
 ---
 
 <section id='projects' class='py-24'>
@@ -18,9 +18,7 @@ const projects = (await getCollection('projects'))
       </p>
     </div>
     <div class='hidden md:block'>
-      <Button  href='/projects' >
-      All Projects
-      </Button>
+      <Button href='/projects'> All Projects </Button>
     </div>
   </div>
 
