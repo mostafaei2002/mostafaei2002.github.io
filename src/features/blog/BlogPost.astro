@@ -2,6 +2,8 @@
 import readingTime from 'reading-time';
 import { formatDistance } from 'date-fns';
 
+import Button from '../../ui/Button.astro';
+
 // console.log(Astro.props);
 const { post } = Astro.props;
 console.log(post);
@@ -17,16 +19,17 @@ const relativeDateTime = formatDistance(created_at, new Date(), {
 });
 ---
 
-<article class='flex flex-col'>
+<article class='flex flex-col rounded-md shadow overflow-hidden p-8'>
   <header>
     <div class='flex justify-between'>
       <h2 class='text-3xl capitalize'>{title}</h2>
-      <span>{readingTimeMinutes}</span>
+      <span>{readingTimeMinutes} mins</span>
     </div>
-    <div>{relativeDateTime}</div>
+    <div class='text-sm'>{relativeDateTime}</div>
   </header>
-  <div>
+  <div class='py-4'>
     <p>{summary}</p>
   </div>
-  <!-- <div class='flex justify-end'><Button /></div> -->
+
+  <div class='flex justify-end'><Button>Read More</Button></div>
 </article>
