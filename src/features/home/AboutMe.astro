@@ -1,34 +1,31 @@
 ---
-import Badge from "../../ui/Badge.astro";
-import Socials from "../../ui/Socials.astro";
+import Badge from '../../ui/Badge.astro';
+import Socials from '../../ui/Socials.astro';
 
-const languages = ["python", "javascript", "rust"];
+const languages = ['python', 'javascript', 'rust'];
 ---
 
-<section id="hero" class="py-44">
-  <div class="container mx-auto px-2 md:px-4 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-12 md:gap-8">
-      <div class="flex flex-col gap-2">
-        <h1 class="heading-primary mb-2">About Me</h1>
-        <p class="text-base max-w-xl mb-4">
-          I love computers. I've always been interested in computers and I love
-          learning more about them and working with them. I am intersted in a
-          lot of different fields including Web Development, Machine Learning,
-          Low Level Programming, Mathematics and more. Every day I strive to
-          learn.
-        </p>
+<section id='hero' class='py-44'>
+  <div class='grid lg:grid-cols-2 gap-12 md:gap-8'>
+    <div class='flex flex-col gap-2'>
+      <h1 class='heading-primary mb-2'>About Me</h1>
+      <p class='text-base max-w-xl mb-4'>
+        I love computers. I've always been interested in computers and I love
+        learning more about them and working with them. I am intersted in a lot
+        of different fields including Web Development, Machine Learning, Low
+        Level Programming, Mathematics and more. Every day I strive to learn.
+      </p>
 
-        <Socials theme="light" />
+      <Socials theme='light' />
+    </div>
+
+    <div class='flex flex-col justify-end gap-2'>
+      <div class='flex gap-2 items-center flex-wrap'>
+        <h4 class='text-base'>Favorite Languages:</h4>
+        {languages.map((lang) => <Badge name={lang} />)}
       </div>
 
-      <div class="flex flex-col justify-end gap-2">
-        <div class="flex gap-2 items-center flex-wrap">
-          <h4 class="text-base">Favorite Languages:</h4>
-          {languages.map((lang) => <Badge name={lang} />)}
-        </div>
-
-        <div>Interested in : Fullstack Development & Machine Learning</div>
-      </div>
+      <div>Interested in : Fullstack Development & Machine Learning</div>
     </div>
   </div>
 </section>
