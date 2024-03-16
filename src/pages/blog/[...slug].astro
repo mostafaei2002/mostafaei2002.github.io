@@ -1,9 +1,10 @@
 ---
-import { getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import readingTime from 'reading-time';
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
-  const blogEntries = await getCollection("blog");
+  const blogEntries = await getCollection('blog');
   // console.log(blogEntries);
 
   return blogEntries.map((entry) => {
@@ -22,8 +23,20 @@ const { Content } = await entry.render();
 const { data } = entry;
 // console.log(data);
 const { title, created_at, updated_at } = data;
+const readingTimeMinutes = Math.ceil(readingTime(entry.body).minutes);
 ---
 
 <Layout title={title}>
-  <Content />
+  <article class='py-12 max-w-screen-lg mx-auto'>
+    <header>
+      <div class='flex justify-between'>
+        <h2 class='text-3xl capitalize'>1000 Hours into programming</h2>
+        <span>{readingTimeMinutes} mins</span>
+      </div>
+      <div>TIME</div>
+    </header>
+    <main>
+      <Content />
+    </main>
+  </article>
 </Layout>
