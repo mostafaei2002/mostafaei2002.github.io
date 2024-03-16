@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 
-import ButtonOutline from '../../ui/Button.astro';
+import Button from '../../ui/Button.astro';
 import ProjectCard from '../../features/projects/ProjectCard.astro';
 
 const projects = (await getCollection('projects'))
@@ -18,7 +18,9 @@ const projects = (await getCollection('projects'))
       </p>
     </div>
     <div class='hidden md:block'>
-      <ButtonOutline text='All Projects' href='/projects' />
+      <Button  href='/projects' >
+      All Projects
+      </Button>
     </div>
   </div>
 
@@ -27,6 +29,6 @@ const projects = (await getCollection('projects'))
   </div>
 
   <div class='flex px-2 mt-8 md:hidden'>
-    <ButtonOutline text='All Projects' href='/projects' stretch={true} />
+    <Button href='/projects' className='flex-1'>All Projects</Button>
   </div>
 </section>

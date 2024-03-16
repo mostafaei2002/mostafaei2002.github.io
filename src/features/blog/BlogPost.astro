@@ -1,4 +1,7 @@
 ---
+import readingTime from 'reading-time';
+import { formatDistance } from 'date-fns';
+
 // console.log(Astro.props);
 const { post } = Astro.props;
 console.log(post);
@@ -7,18 +10,23 @@ const { data } = post;
 const { title, created_at, summary } = data;
 
 const link = `${post.collection}/${post.slug}`;
+
+const readingTimeMinutes = Math.ceil(readingTime(post.body).minutes);
+const relativeDateTime = formatDistance(created_at, new Date(), {
+  addSuffix: true,
+});
 ---
 
 <article class='flex flex-col'>
   <header>
     <div class='flex justify-between'>
-      <h2 class='text-3xl capitalize'>TITLE</h2>
-      <span>READ TIME</span>
+      <h2 class='text-3xl capitalize'>{title}</h2>
+      <span>{readingTimeMinutes}</span>
     </div>
-    <div>TIME</div>
+    <div>{relativeDateTime}</div>
   </header>
   <div>
-    <p>Summary</p>
+    <p>{summary}</p>
   </div>
   <!-- <div class='flex justify-end'><Button /></div> -->
 </article>
