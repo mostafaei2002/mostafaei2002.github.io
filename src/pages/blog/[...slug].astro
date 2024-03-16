@@ -25,6 +25,12 @@ const { Content } = await entry.render();
 const { data } = entry;
 // console.log(data);
 const { title, created_at, updated_at } = data;
+
+const createdAtFormatted = created_at.toLocaleDateString('en-UK', {
+  day: 'numeric',
+  month: 'short',
+  year: 'numeric',
+});
 const readingTimeMinutes = Math.ceil(readingTime(entry.body).minutes);
 const relativeDateTime = formatDistance(created_at, new Date(), {
   addSuffix: true,
@@ -32,16 +38,37 @@ const relativeDateTime = formatDistance(created_at, new Date(), {
 ---
 
 <Layout title={title}>
-  <article class='py-12 max-w-screen-lg mx-auto'>
-    <header>
-      <div class='flex justify-between'>
-        <h2 class='text-3xl capitalize'>1000 Hours into programming</h2>
+  <article class='my-12 p-4 md:p-8 mx-auto shadow max-w-screen-lg'>
+    <header class='border-b'>
+      <div class='flex justify-between items-center'>
+        <h1 class='capitalize'>{title}</h1>
         <span>{readingTimeMinutes} mins</span>
       </div>
-      <div class='capitalize text-base'>{relativeDateTime}</div>
+      <div class='capitalize ps-1 py-2'>Written around {relativeDateTime}</div>
     </header>
-    <main class='py-4'>
+    <main class='pt-8 pb-4'>
       <Content />
     </main>
+    <span class='mt-8'>
+      Written on {createdAtFormatted}
+    </span>
   </article>
 </Layout>
+
+<style is:global>
+  h1 {
+    @apply mb-2;
+  }
+  h2 {
+    @apply mt-6 mb-2;
+  }
+  h3,
+  h4 {
+    @apply mt-4 mb-2;
+  }
+
+  p {
+    @apply text-base mb-2;
+    line-height: 1.7;
+  }
+</style>

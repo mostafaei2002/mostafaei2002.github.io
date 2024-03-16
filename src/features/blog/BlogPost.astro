@@ -25,11 +25,13 @@ const relativeDateTime = formatDistance(created_at, new Date(), {
       <h2 class='text-3xl capitalize'>{title}</h2>
       <span>{readingTimeMinutes} mins</span>
     </div>
-    <div class='text-sm'>{relativeDateTime}</div>
+    <div class='text-sm py-2 capitalize ps-1'>{relativeDateTime}</div>
   </header>
-  <div class='py-4'>
+  <div class='pt-8'>
     <p>{summary}</p>
   </div>
 
-  <div class='flex justify-end'><Button>Read More</Button></div>
+  <div class='flex justify-end mt-8'>
+    <Button href={link}>Read More</Button>
+  </div>
 </article>
