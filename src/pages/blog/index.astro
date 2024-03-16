@@ -11,6 +11,6 @@ const blogPosts = (await getCollection('blog')).filter(
 
 <Layout title='Welcome to my blog'>
   <section class='py-12 flex flex-col gap-6 max-w-screen-lg mx-auto'>
-    {blogPosts.map((post) => <BlogPost client:load post={post} />)}
+    {blogPosts.map((post) => <BlogPost post={post} />)}
   </section>
 </Layout>

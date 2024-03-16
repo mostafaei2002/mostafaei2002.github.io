@@ -2,7 +2,8 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import readingTime from 'reading-time';
-import { formatDistance } from 'date-fns';
+
+import RelativeTime from '../../ui/RelativeTime';
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -32,9 +33,6 @@ const createdAtFormatted = created_at.toLocaleDateString('en-UK', {
   year: 'numeric',
 });
 const readingTimeMinutes = Math.ceil(readingTime(entry.body).minutes);
-const relativeDateTime = formatDistance(created_at, new Date(), {
-  addSuffix: true,
-});
 ---
 
 <Layout title={title}>
@@ -44,7 +42,7 @@ const relativeDateTime = formatDistance(created_at, new Date(), {
         <h1 class='capitalize'>{title}</h1>
         <span>{readingTimeMinutes} mins</span>
       </div>
-      <div class='capitalize ps-1 py-2'>Written around {relativeDateTime}</div>
+      <RelativeTime created_at={created_at} client:load />
     </header>
     <main class='pt-8 pb-4'>
       <Content />

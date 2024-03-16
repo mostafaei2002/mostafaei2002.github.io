@@ -1,25 +1,30 @@
 ---
-import ButtonText from "../ui/ButtonText.astro";
-import Socials from "../ui/Socials.astro";
+import ButtonText from '../ui/ButtonText.astro';
+import Socials from '../ui/Socials.astro';
 ---
 
-<footer class="py-24 bg-gray-800 text-white">
-  <div class="container mx-auto px-2 md:px-4 lg:px-8">
-    <div class="grid md:grid-cols-3 gap-4">
-      <div class="text-center">Mostafaei2002 - A passionate programmer</div>
-      <div class="flex flex-col items-center text-center gap-2">
+<footer class='py-24 bg-gray-800 text-white'>
+  <div class='container mx-auto px-2 md:px-4 lg:px-8'>
+    <div class='grid md:grid-cols-3 gap-4'>
+      <div class='text-center'>Mostafaei2002 - A passionate programmer</div>
+      <div class='flex flex-col items-center text-center gap-2'>
         <nav>
-          <h5 class="text-xl mb-4">Links</h5>
-          <ul class="flex flex-col gap-2">
-            <li><ButtonText href="/#">Home</ButtonText></li>
+          <h5 class='text-xl mb-4'>Links</h5>
+          <ul class='flex flex-col gap-2'>
+            <li><ButtonText href='/#'>Home</ButtonText></li>
+
             <li>
-              <ButtonText href="/projects">Projects</ButtonText>
+              <ButtonText href='/projects'>Projects</ButtonText>
+            </li>
+
+            <li>
+              <ButtonText href='/blog'>Blog</ButtonText>
             </li>
           </ul>
         </nav>
       </div>
-      <div class="flex flex-col items-center md:items-start">
-        <h5 class="text-xl mb-2">Get In Touch</h5>
+      <div class='flex flex-col items-center md:items-start'>
+        <h5 class='text-xl mb-2'>Get In Touch</h5>
         <Socials />
       </div>
     </div>
