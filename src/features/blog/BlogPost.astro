@@ -10,7 +10,7 @@ const { data } = post;
 
 const { title, created_at, summary } = data;
 
-const link = `${post.slug}`;
+const link = `/blog/${post.slug}`;
 
 const readingTimeMinutes = Math.ceil(readingTime(post.body).minutes);
 ---
