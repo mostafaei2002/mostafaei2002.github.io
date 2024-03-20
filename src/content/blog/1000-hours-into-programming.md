@@ -39,7 +39,11 @@ After learning the basics of Django and reading the documentation, I built an ec
 
 Initially, I created a simple website without any interactivity, just pure HTML and CSS. I constantly jumped back and forth, writing code and reading documentation until I finished a simple version of the website. I then learned about HTMX and decided to integrate it into my project.
 
-So, I started reading about HTMX and rewriting almost the entire project again. I implemented some cool features like filtering products, infinite scrolling, etc., and I really enjoyed the process. It took me a few months to build this project, and although it was far from being a production-ready website, I had a lot of fun, and I also got to practice my frontend skills.
+So, I started reading about HTMX and rewriting almost the entire project again. I implemented some cool features like filtering products, infinite scrolling, etc., and I really enjoyed the process. It took me a few months to build this project, and although it was far from being a production-ready website, I had a lot of fun, and I also got to practice my frontend skills. You can click the following links to see more about my project:
+
+[Link to Project Repository](https://github.com/mostafaei2002/django-ecommerce)
+
+[Link to Short Youtube Demo](https://youtu.be/nAhxrejd-1s)
 
 ### Different Language Courses
 
@@ -65,7 +69,7 @@ After learning React, I took a course on Learning Gatsby, and alongside Gatsby, 
 
 Although I've learned a lot in the past 6 months, I can say that programming turned out to be much harder than I expected it to be and I still have a long way to go, but I am up for the challenge.
 
-Moving forward, I'll probably focus more on fundamental concepts and deep knowledge. To be more specific, I have some books in mind, including "Clean Code" by Robert C. Martin and "Introduction to Algorithms" by Thomas H. Cormen and colleagues.
+Moving forward, I'll probably focus more on fundamental concepts and deep knowledge. To be more specific, I have some books in mind, including "Clean Code" by Robert C. Martin and "Introduction to Algorithms" by Thomas H. Cormen and colleagues. I am also gonna look into design systems, etc.
 
 I'll also probably do random projects here and there. There are two repositories I really like, including "Project-Based Learning" and "Build Your Own X." I'll probably do one of those projects every now and then, if possible, every week.
 
