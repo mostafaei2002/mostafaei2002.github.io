@@ -33,7 +33,7 @@ After JavaScript, I learned about Bootstrap and Tailwind CSS, and I fell in love
 
 At this point, I had learned a lot, but I hadn't built any real-world projects to put my knowledge into practice. So, I went straight for Django to learn backend development and use it alongside my frontend skills to build some real-world projects. I took a Django course that was around 20 hours long.
 
-### Ecommerce Project, Docker, and HTMX
+### Ecommerce Project with Django, Docker, and HTMX
 
 After learning the basics of Django and reading the documentation, I built an ecommerce website. I chose Django for the backend and Bootstrap for the frontend, and I used Docker to set up a CI/CD pipeline to deploy my project later.
 
