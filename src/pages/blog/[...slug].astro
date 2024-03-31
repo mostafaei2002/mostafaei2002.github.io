@@ -40,9 +40,12 @@ const readingTimeMinutes = Math.ceil(readingTime(entry.body).minutes);
     <header class='border-b'>
       <div class='flex justify-between items-center'>
         <h1 class='capitalize'>{title}</h1>
-        <span>{readingTimeMinutes} mins</span>
+        <span class='hidden md:block'>{readingTimeMinutes} mins</span>
       </div>
-      <RelativeTime created_at={created_at} client:load />
+      <div class='flex justify-between items-center'>
+        <RelativeTime created_at={created_at} client:load />
+        <span class='block md:hidden'>{readingTimeMinutes} mins</span>
+      </div>
     </header>
     <main class='pt-8 pb-4'>
       <Content />

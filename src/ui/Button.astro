@@ -2,7 +2,11 @@
 const { text, href, className } = Astro.props;
 ---
 
-<a href={href} class={`btn--outline ${className}`} target='_blank'>
+<a
+  href={href}
+  class={`btn--outline ${className}`}
+  target=`${href.startsWith("/")? "" : "_blank"}`
+>
   <slot />
 </a>
 
