@@ -19,11 +19,11 @@ const readingTimeMinutes = Math.ceil(readingTime(post.body).minutes);
   <header class='border-b'>
     <div class='flex justify-between items-center'>
       <h2 class='capitalize'>{title}</h2>
-      <span class='hidden md:block'>{readingTimeMinutes} mins</span>
+      <span class='hidden md:block'>{readingTimeMinutes} mins read</span>
     </div>
     <div class='flex justify-between items-center'>
       <RelativeTime created_at={created_at} client:load />
-      <span class='block md:hidden'>{readingTimeMinutes} mins</span>
+      <span class='block md:hidden'>{readingTimeMinutes} mins read</span>
     </div>
   </header>
   <div class='pt-8'>
